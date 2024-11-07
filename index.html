@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeknologyRadar</title>
+</head>
+<body>
+<svg id="radar" width="800" height="800" style="background-color: rgb(255,255,255);">
+    <g transform="translate(400,400) scale(1)">
+        <line x1="0" y1="-400" x2="0" y2="400" style="stroke: rgb(221,221,224); stroke-width: 1;"></line>
+        <line x1="-400" y1="0" x2="400" y2="0" style="stroke: rgb(221,221,224); stroke-width: 1;"></line>
+        <circle cx="0" cy="0" r="100" style="fill: none; stroke: rgb(221,221,224); stroke-width: 1;"></circle>
+        <text y="0" text-anchor="middle" style="fill: rgb(91, 163, 0); opacity: 0.35; font-family: Arial, Helvetica; font-size: 42px; font-weight: bold; pointer-events: none; user-select: none;">ADOPT</text>
+        <circle cx="0" cy="0" r="200" style="fill: none; stroke: rgb(221,221,224); stroke-width: 1;"></circle>
+        <text y="-120" text-anchor="middle" style="fill: rgb(0, 158, 176); opacity: 0.35; font-family: Arial, Helvetica; font-size: 42px; font-weight: bold; pointer-events: none; user-select: none;">TRIAL</text>
+        <circle cx="0" cy="0" r="300" style="fill: none; stroke: rgb(221,221,224); stroke-width: 1;"></circle>
+        <text y="-240" text-anchor="middle" style="fill: rgb(199, 186, 0); opacity: 0.35; font-family: Arial, Helvetica; font-size: 42px; font-weight: bold; pointer-events: none; user-select: none;">ASSESS</text>
+        <circle cx="0" cy="0" r="400" style="fill: none; stroke: rgb(221,221,224); stroke-width: 1;"></circle>
+        <text y="-340" text-anchor="middle" style="fill: rgb(224, 155, 150); opacity: 0.35; font-family: Arial, Helvetica; font-size: 42px; font-weight: bold; pointer-events: none; user-select: none;">HOLD</text>
+    </g>
+</svg>
+</body>
+</html>
+
+
+<script>
+    const radarData = [
+        { "Name": "C#", "Category": "HOLD" },
+        { "Name": "Vue", "Category": "TRIAL" },
+        { "Name": "Angular", "Category": "ASSESS" },
+        { "Name": "jQuery", "Category": "ADOPT" },
+    ];
+
+const categories = {
+    "Adopt": { radiusMin: 0, radiusMax: 100, color: 'green' },
+    "Trial": { radiusMin: 100, radiusMax: 200, color: 'blue' },
+    "Assess": { radiusMin: 200, radiusMax: 300, color: 'yellow' },
+    "Hold": { radiusMin: 300, radiusMax: 400, color: 'red' }
+};
+
+function getRandomPositionInHold() {
+    const radiusMin = 300;  
+    const radiusMax = 400;  
+
+    const radius = Math.random() * (radiusMax - radiusMin) + radiusMin; 
+
+    const angle = Math.random() * 2 * Math.PI;
+
+    const x = radius * Math.cos(angle); 
+    const y = radius * Math.sin(angle);
+
+    console.log(' X ',x,' Y ',y);
+    return { x, y };
+}
+
+const holdPosition = getRandomPositionInHold();
+const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+circle.setAttribute("cx", holdPosition.x + 400);  
+circle.setAttribute("cy", holdPosition.y + 400); 
+circle.setAttribute("r", 5); 
+circle.setAttribute("fill", "red");  
+document.getElementById("radar").appendChild(circle);
+</script>
