@@ -55,10 +55,20 @@ function getRandomPositionInHold() {
 }
 
 const holdPosition = getRandomPositionInHold();
+
 const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 circle.setAttribute("cx", holdPosition.x + 400);  
 circle.setAttribute("cy", holdPosition.y + 400); 
-circle.setAttribute("r", 5); 
+circle.setAttribute("r", 10); 
 circle.setAttribute("fill", "red");  
 document.getElementById("radar").appendChild(circle);
 </script>
+<style>
+    #radar {
+        position: relative;
+        width: 800px;
+        height: 800px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+    }
+</style>
