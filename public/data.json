@@ -1,0 +1,120 @@
+{
+    "releases":[
+        "2023-11-08",
+        "2024-11-08"
+    ],
+    "tags":[
+        "architecture",
+        "coding",
+        "devops"
+    ],
+    "items":[
+        {
+            "id":"12-factor-apps",
+            "release":"2024-11-08",
+            "ring":"adopt",
+            "quadrant":"method-and-patterns",
+            "body":"<p>The <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://12factor.net/de/\">12-factor app</a> methodology, originally developed by Heroku, provides a comprehensive set of best practices for building cloud-native applications. This methodology emphasizes creating applications that are easy to manage, scalable, and portable across different environments. The <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://developer.ibm.com/articles/15-factor-applications/\">15-factor model</a> extends this framework to address additional concerns relevant in modern cloud-native development.</p>\n<h3>Core Principles of 12-Factor Apps</h3>\n<ol>\n<li><strong>Codebase</strong>: Maintain a single codebase tracked in version control, with multiple deployments.</li>\n<li><strong>Dependencies</strong>: Explicitly declare and isolate dependencies.</li>\n<li><strong>Config</strong>: Store configuration in the environment.</li>\n<li><strong>Backing Services</strong>: Treat backing services as attached resources.</li>\n<li><strong>Build, Release, Run</strong>: Strictly separate build and run stages.</li>\n<li><strong>Processes</strong>: Execute the app as one or more stateless processes.</li>\n<li><strong>Port Binding</strong>: Export services via port binding.</li>\n<li><strong>Concurrency</strong>: Scale out via the process model.</li>\n<li><strong>Disposability</strong>: Maximize robustness with fast startup and graceful shutdown.</li>\n<li><strong>Dev/Prod Parity</strong>: Keep development, staging, and production as similar as possible.</li>\n<li><strong>Logs</strong>: Treat logs as event streams.</li>\n<li><strong>Admin Processes</strong>: Run admin/management tasks as one-off processes.</li>\n</ol>\n<h3>Extending to 15 Factors</h3>\n<p>The 15-factor model builds upon the original principles by adding:</p>\n<ol start=\"13\">\n<li><strong>API First</strong>: Design APIs first to ensure interoperability and future-proofing.</li>\n<li><strong>Telemetry</strong>: Implement robust telemetry for monitoring and diagnostics.</li>\n<li><strong>Authentication and Authorization</strong>: Incorporate strong, centralized authentication and authorization mechanisms.</li>\n</ol>\n<h3>Relevance</h3>\n<p>For us, this rather old pattern is still very relevant, and many methods, patterns, and practices on our radar are related and enable these patterns at their core. To name a few, <a href=\"/techradar/platforms-and-aoe-services/kubernetes/\">Kubernetes</a>, <a href=\"/techradar/platforms-and-aoe-services/prometheus/\">Prometheus</a>, <a href=\"/techradar/platforms-and-aoe-services/self-service-infrastructure/\">Self-Service Infrastructure</a>, or the <a href=\"/techradar/methods-and-patterns/api-first-design-approach/\">API-First Design Approach</a> are very related. Others, like <a href=\"/techradar/methods-and-patterns/shared-responsibility/\">Shared Responsibility Models</a>, are easier to implement based on this pattern.</p>\n",
+            "featured":true,
+            "flag":"new",
+            "tags":[
+                "architecture"
+            ],
+            "position":[
+                531,321
+            ]
+        },
+        {
+            "id": "akka",
+            "release": "2024-11-08",
+            "title": "Akka",
+            "ring": "hold",
+            "quadrant": "languages-and-frameworks",
+            "body": "<p>With the growing adoption of microservice-based architectures, the interest in frameworks and tools that make building systems that follow the reactive manifesto possible has increased.</p>\n<p>Akka provides you a toolkit and runtime based on the Actor model known from Erlang to reach this goal.</p>\n<p>It&#39;s one of the most-adopted toolkits in its space with its key contributors being heavily involved in the overall movement of the reactive community as well.\nAt AOE, we use Akka when we need high-performance, efficient data processing or where its finite state machine plays nicely with the domain of the application. It is worth mentioning that the actor model might come with extra complexity and therefore should be used in problem spaces where the advantages of this approach bring enough value and no accidental complexity.</p>\n",
+            "featured": false,
+            "flag": "changed",
+            "tags": [
+              "coding"
+            ],
+            "revisions": [
+              {
+                "release": "2023-11-08",
+                "ring": "trial",
+                "body": "<p>With the growing adoption of microservice-based architectures, the interest in frameworks and tools that make building systems that follow the reactive manifesto possible has increased.</p>\n<p>Akka provides you a toolkit and runtime based on the Actor model known from Erlang to reach this goal.</p>\n<p>It&#39;s one of the most-adopted toolkits in its space with its key contributors being heavily involved in the overall movement of the reactive community as well.\nAt AOE, we use Akka when we need high-performance, efficient data processing or where its finite state machine plays nicely with the domain of the application. It is worth mentioning that the actor model might come with extra complexity and therefore should be used in problem spaces where the advantages of this approach bring enough value and no accidental complexity.</p>\n"
+              }
+            ],
+            "position": [
+              136,
+              126
+            ]
+          },
+          {
+            "id": "angular",
+            "release": "2024-07-10",
+            "title": "Angular",
+            "ring": "adopt",
+            "quadrant": "languages-and-frameworks",
+            "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://angular.io/\">Angular</a> version 18 introduces transformative features, notably the introduction of Signals and the partnership with Wiz.</p>\n<p>Signals offer a more efficient and declarative way to handle reactivity, allowing automatic UI updates with changing data, thus reducing boilerplate and enhancing maintainability.</p>\n<p>Standalone components, further refined in Angular 18, reduce module dependency and complexity, promoting a modular and maintainable codebase. Enhancements in monorepo management improve the organization and sharing of components across projects, supporting large-scale applications.</p>\n<p>Wiz is a Google internal framework used for performance-critical apps like Google Search. The merge with Wiz brings advanced profiling, debugging, and performance optimization tools from Wiz into Angular, streamlining workflows and improving application performance. This collaboration aims to boost developer productivity and efficiency by combining Angular&#39;s framework robustness with Wiz&#39;s powerful tools.</p>\n<p>Overall, Angular 18&#39;s advancements in reactivity and tooling, along with the Wiz integration, significantly boost performance, usability, and developer productivity, solidifying Angular&#39;s status as a leading framework for modern web development.</p>\n",
+            "featured": true,
+            "flag": "changed",
+            "tags": [
+              "coding",
+              "frontend"
+            ],
+            "revisions": [
+              {
+                "release": "2023-11-08",
+                "ring": "adopt",
+                "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://angular.io/\">Angular</a>, now in version 15, remains a robust and well-maintained front-end framework that continues to build new features on its solid foundation. Angular offers excellent tools for building large-scale applications.</p>\n<p>For instance, it includes built-in capabilities for setting up and managing a monorepo, simplifying the sharing of components across multiple projects. As a framework, Angular takes an opinionated approach to solving various problems, reducing the need for extensive decision-making while maintaining consistency, yet still providing flexibility where necessary. Angular 15 further stabilizes standalone components, a feature introduced in Angular 14, with the aim of simplifying Angular applications and reducing module complexity, addressing a common criticism of Angular.</p>\n<p>The ease of upgrading to new versions has improved significantly due to the framework&#39;s stability and the detailed migration guides provided by the maintainers.</p>\n"
+              }
+            ],
+            "position": [
+              379,
+              317
+            ]
+          },
+          {
+            "id": "react-native",
+            "release": "2024-11-08",
+            "title": "React Native",
+            "ring": "assess",
+            "quadrant": "languages-and-frameworks",
+            "body": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://reactnative.dev/\">React Native</a> is an open-source UI software framework used to build applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows, and UWP. It enables developers to utilize the React framework alongside native platform features.</p>\n<p>Developing applications with a single codebase can help ensure consistent user experiences across platforms, while also delivering the performance advantages of native code.</p>\n",
+            "featured": false,
+            "flag": "changed",
+            "tags": [
+              "coding",
+              "frontend"
+            ],
+            "position": [
+              132,
+              218
+            ]
+          },
+          {
+            "id": "remix",
+            "release": "2024-07-10",
+            "title": "Remix",
+            "ring": "adopt",
+            "quadrant": "languages-and-frameworks",
+            "body": "<p>With Remix v2.2.0, Remix itself is now just a Vite plugin. This gives us access to the entire ecosystem of Vite plugins and even more, for example:</p>\n<ul>\n<li><strong>Near-instant dev startup</strong>: Vite lazily compiles your app code on-demand, so the dev server can boot immediately.</li>\n<li><strong>Pre-bundled dependencies</strong>: Vite only processes dependencies once, so large libraries like Material UI and AntD don’t become bottlenecks for rebuilds or hot updates.</li>\n<li><strong>Incremental hot updates</strong>: Vite keeps track of dependencies so it only needs to reprocess app code that depends on the changes.</li>\n</ul>\n",
+            "featured": true,
+            "flag": "changed",
+            "tags": [
+              "coding",
+              "frontend"
+            ],
+            "revisions": [
+              {
+                "release": "2023-11-08",
+                "ring": "trial",
+                "body": "<p>Remix is a full stack web framework that lets us focus on the user interface and work with web standards.</p>\n<p>One of Remix biggest features is the availability of nested routes. Through nested routes, Remix can eliminate nearly\nevery loading state.</p>\n<p>Most web apps fetch inside of components, creating request waterfalls which leads to slower page loads. Remix loads data\nin parallel on the server and sends a fully formed HTML document</p>\n<p>At AOE we use Remix for our enterprise web applications to provide a first class UX and fast page loads.</p>\n"
+              }
+            ],
+            "position": [
+              248,
+              319
+            ]
+          }
+    ]
+}
