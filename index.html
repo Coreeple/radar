@@ -6,6 +6,9 @@
     <title>TeknologyRadar</title>
 </head>
 <body>
+
+    <div id="markdown-display"></div>
+
 <svg id="radar" width="800" height="800" style="background-color: rgb(255,255,255);">
     <g transform="translate(400,400) scale(1)">
         <line x1="0" y1="-400" x2="0" y2="400" style="stroke: rgb(221,221,224); stroke-width: 1;"></line>
@@ -62,6 +65,57 @@ circle.setAttribute("cy", holdPosition.y + 400);
 circle.setAttribute("r", 10); 
 circle.setAttribute("fill", "red");  
 document.getElementById("radar").appendChild(circle);
+
+
+async function fetchMarkdownFile(date, fileName) {
+    try {
+        const response = await fetch(`/public/${date}/${fileName}`);
+        
+        if (!response.ok) {
+            throw new Error(`Dosya bulunamadı: ${fileName}`);
+        }
+
+        const content = await response.text();
+        const cleanedContent = content.replace(/---[\s\S]*?---/, '').trim();
+        
+        // Markdown içeriğini ekrana bastır
+        const displayElement = document.getElementById('markdown-display');
+        const section = document.createElement('section');
+        section.innerText = `${cleanedContent}`;
+        displayElement.appendChild(section);
+    } catch (error) {
+        console.error('Dosya okunamadı:', error);
+    }
+}
+
+
+const dates = ['2024-11-08'];
+const files = ['12-factor-apps.md'];
+
+dates.forEach(date=>{
+    files.forEach(file=> fetchMarkdownFile(date,file));
+});
+
+async function ReadData() {
+    const response = await fetch('/public/data.json');
+
+    const data=await response.json();
+
+    const largestDate=Math.max(...data.releases.map(date=>new Date(date).getTime()));
+
+    data.items.filter(item=> item.release==largestDate);
+
+    console.log()
+    
+}
+
+async function CurrentDate(){
+    const response = await fetch('/public/data.json');
+    const data = await response.json();
+    const largestDate=new Date(Math.max(...data.releases.map(date=>new Date(date).getTime()))).toISOString().split('T')[0];
+    console.log(largestDate);
+}
+CurrentDate();
 </script>
 <style>
     #radar {
@@ -72,3 +126,4 @@ document.getElementById("radar").appendChild(circle);
         border: 1px solid #ccc;
     }
 </style>
+
